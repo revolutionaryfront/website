@@ -1,0 +1,30 @@
+//const openpgp = require('openpgp'); // use as CommonJS, AMD, ES6 module or via window.openpgp
+
+(async () => {
+    // put keys in backtick (``) to avoid errors caused by spaces or tabs
+    const publicKeyArmored = `-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mDMEaRuA4BYJKwYBBAHaRw8BAQdAf8wMjLVwzqlVYGEOWfbsjUQiX6Au1zb2IVXG
+plZR45W0H21haWxAcmZkZncub3JnIDxtYWlsQHJmZGZ3Lm9yZz6I0QQTFgoAgwWC
+aRuA4AMLCQcJEGaLBshHGBSwRRQAAAAAABwAIHNhbHRAbm90YXRpb25zLm9wZW5w
+Z3Bqcy5vcmcdghgapdHZ57Gx8eCfkpNrNCU0bwhHwtAXExtJIOntdAMVCggEFgAC
+AQIZAQKbAwIeARYhBJeKp1FpVAIgKmsajGaLBshHGBSwAABo8QEAuDefRRgozFA7
+ZSkNXNSG6psoSyVgyTqRe4k8JFBQoiQBALXSCGdjq8ZGJFnv601FAoGtRClg3qeF
+3+55IHYl6TcIuDgEaRuA4BIKKwYBBAGXVQEFAQEHQGuEp3+YArHGk7mo+1WmxXJ5
+hSsEaQH0dFn8EmFk+sguAwEIB4i+BBgWCgBwBYJpG4DgCRBmiwbIRxgUsEUUAAAA
+AAAcACBzYWx0QG5vdGF0aW9ucy5vcGVucGdwanMub3Jnnld61S72HHwqFleMvNgC
+6Au5Y7uI3WLe57eeFKeglbYCmwwWIQSXiqdRaVQCICprGoxmiwbIRxgUsAAAsi8B
+AOIx6YrtlqKULg30WOqXx9eI2uys+WXxF6FBhtFQWTyCAPwNXtZ86tExodNq0gqs
+AM5qCU6jMY0xQFKSJ1hbJQFcCA==
+=AB++
+-----END PGP PUBLIC KEY BLOCK-----`;
+
+    const publicKey = await openpgp.readKey({ armoredKey: publicKeyArmored });
+
+
+    const encrypted = await openpgp.encrypt({
+        message: await openpgp.createMessage({ text: 'Hello, World!' }), // input as Message object
+                                            encryptionKeys: publicKey,
+    });
+    console.log(encrypted); // '-----BEGIN PGP MESSAGE ... END PGP MESSAGE-----'
+})();
