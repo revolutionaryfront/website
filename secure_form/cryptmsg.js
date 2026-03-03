@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // This is intended to be a kind of ersatz TOTP implementation. It
         // probably doesn't do much but is mostly here to deter bots.
         /*
-        const key_resp = await fetch('https://rf.mt.oits.fail/' + '
+        const key_resp = await fetch('https://rf.mt.oits.fail/' +
                                      'pubweb_form_key?pk=MTI3MTQK');
         const key = await key_resp.json();
         if (key) {
