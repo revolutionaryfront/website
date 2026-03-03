@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const email = form.querySelector('#email').value;
         const messageTextArea = form.querySelector('textarea[name="message"]');
         const message = messageTextArea.value;
-        const form_data = 'Name: ' + name + '\nEmail: ' + email + '\nMessage: '
-                        + message;
+        const form_data = 'Name: ' + name + '\nEmail: ' + email +
+                          '\nMessage: ' + message;
         form.querySelector('#name').value = '';
         form.querySelector('#email').value = '';
 
