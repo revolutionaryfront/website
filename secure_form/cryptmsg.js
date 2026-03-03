@@ -33,6 +33,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // This might run into CORS issues. Just going to hardcode the key
         // in JS while testing.
+        //
+        // This is intended to be a kind of ersatz TOTP implementation. It
+        // probably doesn't do much but is mostly here to deter bots.
         /*
         const key_resp = await fetch('https://rf.mt.oits.fail/pubweb_form_key?\
                                       pk=MTI3MTQK');
@@ -75,9 +78,9 @@ THXMW5Azl4XkyQVZfG9jDO5SiXdvd37s7AD+Lo5ndahHdfkb2B9kjZq7dd64
         });
         form.querySelector('#message').value = encrypted;
         //messageTextArea.value = encrypted;
-        form.querySelector('#formredir').value = 'https://oits.fail/\
-                                                  sec_form_test/?redir_msg=\
-                                                  Submission%20Recieved';
+        form.querySelector('#formredir').value = 'https://oits.fail/' +
+                                                 'sec_form_test/?redir_msg=' +
+                                                 'Submission%20Recieved';
         //console.log(encrypted);
         if (encrypted && key) {
             form.submit();
