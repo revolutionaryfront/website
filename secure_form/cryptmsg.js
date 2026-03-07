@@ -20,16 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     form.addEventListener('submit', async function(event) {
         event.preventDefault();
-        const name = form.querySelector('#name').value;
-        const email = form.querySelector('#email').value;
-        const messageTextArea = form.querySelector('textarea[name="message"]');
-        const message = messageTextArea.value;
-        const form_data = 'Name: ' + name + '\nEmail: ' + email +
-                          '\nMessage: ' + message;
-        form.querySelector('#name').value = '';
-        form.querySelector('#email').value = '';
 
-
+        const formElements = Array.from(form.elements);
+        let form_data = '';
+        formElements.forEach(element => {
+            form_data += element.name + ': ' + element.value + '\n';
+            element.value = '';
+        });
 
         // This might run into CORS issues. Just going to hardcode the key
         // in JS while testing.
@@ -77,12 +74,11 @@ THXMW5Azl4XkyQVZfG9jDO5SiXdvd37s7AD+Lo5ndahHdfkb2B9kjZq7dd64
                                                  encryptionKeys: publicKey,
         });
         form.querySelector('#message').value = encrypted;
-        //messageTextArea.value = encrypted;
         form.querySelector('#formredir').value = 'https://oits.fail/' +
                                                  'sec_form_test/?redir_msg=' +
                                                  'Submission%20Recieved';
-        //console.log(encrypted);
         if (encrypted && key) {
+            //console.log(encrypted);
             form.submit();
         }
     });
