@@ -21,11 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', async function(event) {
         event.preventDefault();
 
+        const ignoreNames = ['k', 'formredir'];
+
         const formElements = Array.from(form.elements);
         let form_data = '';
         formElements.forEach(element => {
-            form_data += element.name + ': ' + element.value + '\n';
-            element.value = '';
+            if (!ignoreNames.includes(element.name) && element.name) {
+                form_data += element.name + ': ' + element.value + '\n';
+                element.value = '';
+            }
         });
 
         // This might run into CORS issues. Just going to hardcode the key
