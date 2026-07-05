@@ -1,0 +1,14 @@
+.git/
+.local/
+.local/*
+.cache/
+.flaskenv
+venv/
+_notes.txt
+_backup/
+.*~
+*.bak
+*.bak*
+__pycache__/
+*/__pycache__/
+*_test.html
