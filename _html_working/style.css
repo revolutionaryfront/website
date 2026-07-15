@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+    #top-nav-logo {
+        display: none;
+        visibility: hidden;
+    }
+    #top-nav-hamburger-logo {
+        display: inline;
+        visibility: visible;
+        height: 220px;
+        top: 9px;
+        left: 0;
+        position: absolute;
+        z-index: 0;
+    }
+    #ig-logo {
+        position: absolute;
+        top: 150px;
+        right: 20px;
+        z-index: 0;
+    }
+    .ig-logo-img {
+        width: 52px;
+        height: 52px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    #top-nav-hamburger-logo {
+        display: none;
+        visibility: hidden;
+    }
+    #ig-logo {
+        float:right;
+        position: absolute;
+        top: 155px;
+        right: 760px;
+        z-index: 3;
+    }
+    .ig-logo-img {
+        width: 48px;
+        height: 48px;
+    }
+}
+#hamburger-input{
+    display: none;
+}
+#top-nav-upper {
+    background-color: black;
+    height: 240px;
+    width:100%;
+    z-index: -2;
+}
+#top-nav-logo {
+    height: 220px;
+    top: 9px;
+    left: 0;
+    position: absolute;
+    z-index: 0;
+}
+/*
+#top-nav-logo-dv {
+    height: 200px;
+    width: 800px;
+    background-image: url('revolutionary-front-left-header-logo.webp');
+    background-size: 800px, 200px, cover;
+    top: 0;
+    left: 0;
+    display: inline;
+    z-index: -3;
+}*/
+#top-nav-list {
+    text-transform: uppercase;
+    float: right;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    z-index: 100;
+    position: relative;
+}
+#top-nav-list ul {
+    list-style-type: none;
+    display: inline;
+}
+#top-nav-list ul li {
+    display: inline;
+}
+#top-nav-list a {
+    color: white;
+    float: left;
+    display:block;
+    height:80%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top:40px;
+    width: 140px;
+    text-align: center;
+    z-index: 200;
+    text-decoration: none;
+}
+#top-nav-list a:hover, .top-nav-red-item a:hover {
+    background-color: #ddd;
+    color: black;
+}
+#top-nav-list a:active, .top-nav-red-item a:active {
+    background-color: #616161;
+    color: white;
+    .arrow-down {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+    }
+}
+#top-nav-red-box {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 180px;
+    height: 40px;
+    background-color: #d94f4d;
+}
+.top-nav-list-section {
+    height: 100px;
+    z-index: 200;
+}
+.top-nav-red-item {
+    background-color: #d94f4d;
+}
+.red-item-text {
+    color: black;
+}
+
+.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-top: 3px;
+    /*margin-left: 4px;
+    margin-right: 12px;*/
+}
+.arrow-right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.arrow-left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.arrow-up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.arrow-down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.fl-right {
+    float: right;
+}
