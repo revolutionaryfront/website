@@ -4,10 +4,20 @@
     position: relative;
     background: #d73d3d;
     color: #0a0208;
-    visibility: hidden;
+    /*visibility: hidden;*/
+    display: none;
+}
+#marquee-testing {
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    background: #d73d3d;
+    color: #0a0208;
+    visibility: visible;
+    display: block;
 }
 
-#marquee p {
+#marquee p, #marquee-testing p {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -21,19 +31,22 @@
     animation: scroll-left 30s linear infinite;
     font-weight: bold;
 }
-#marquee a {
+#marquee a, #marquee-testing a {
     color: #0a0208;
     text-decoration: none;
     display: block;
 }
 #marquee-text-left {
     text-align: left;
+    margin-left: 0;
 }
 #marquee-text-center {
     text-align: center;
+    margin-left: 0;
 }
 #marquee-text-right {
     text-align: right;
+    margin-left: 0;
 }
 @-moz-keyframes scroll-left {
     0% {
@@ -66,15 +79,31 @@
     }
 }
 
-
+@media only screen and (max-width: 1520px) {
+    #marquee-text-center {
+        padding-left: 20px;
+    }
+    #marquee-text-right {
+        padding-left: 85px;
+    }
+}
 @media only screen and (max-width: 1200px) {
     #marquee-text-center {
-    display: none;
+        display: none;
+    }
+    #marquee-text-right {
+        padding-left: 45px;
     }
 }
 
 @media only screen and (max-width: 820px) {
     #marquee-text-right {
-    display: none;
+        padding-left: 75px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    #marquee-text-right {
+        display: none;
     }
 }

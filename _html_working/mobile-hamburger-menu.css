@@ -144,3 +144,7 @@ body {
     }
 }
 
+#sidebar-menu-header {
+    font-size: 14px;
+    color: black;
+}
