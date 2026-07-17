@@ -8,8 +8,10 @@ body {
 }
 body main {
     color: #fefefe;
-    margin-left: 15px;
+    margin-left: 35px;
     margin-right: 15px;
+    margin-top: 35px;
+    margin-bottom: 35px;
 }
 main p {
     margin-top: 15px;
@@ -29,6 +31,7 @@ main h2 {
     font-size: 26;
 }
 
+/* Top navigation */
 @media only screen and (max-width: 1200px) {
     #top-nav-logo {
         display: none;
@@ -159,7 +162,57 @@ main h2 {
     color: black;
 }
 
-.pou-links-number {
+
+/* Footer navigation */
+#footer-links {
+    /*width: 98%;
+    margin-left: 1%;
+    */
+    width: 100%;
+    height: 200px;
+    background-color: black;
+    color: white
+}
+#footer-links ul {
+    list-style-type: none;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+#footer-links a {
+    color: white;
+    text-decoration: none;
+}
+#footer-col-1 {
+    float: left;
+}
+#footer-col-2 {
+    float: left;
+    margin-left: 50px;
+}
+#footer-col-3 {
+    float: left;
+    margin-left: 100px;
+}
+#footer-logo-circular {
+    height: 160px;
+    right: 40px;
+    margin-top: 20px;
+    position: absolute;
+}
+#cc-license {
+    font-size: 12px;
+    margin-top: 160px;
+    position: absolute;
+    left: 40px;
+}
+.cc-footer-svg {
+    max-width: 1em;
+    max-height:1em;
+    margin-left: .2em;
+}
+
+/* Points of Unity page*/
+.pou-links-number, .pou-header-number {
     color: #ca3141;
     margin-right: 20px;
     display: block;
@@ -170,10 +223,11 @@ main h2 {
 }
 .pou-links-text {
     display: block;
-    padding-top: 10px;
+    margin-top: 5px;
 }
 #pou-top-links {
     display: block;
+    margin-bottom: 50px;
 }
 #pou-top-links ul {
     list-style-type: none;
@@ -186,13 +240,15 @@ main h2 {
     font-weight: bold;
     vertical-align: center;
     margin-bottom: 10px;
+    padding-top: 10px;
+    font-size: 16px;
     /*opacity: 0;
     animation: fadeIn 2s forwards;*/
 }
-#pou-top-links-1, #pou-top-links-3 {
+#pou-top-links-1, #pou-top-links-3, #pou-header-1, #pou-header-3 {
      animation: slideInLeft 3s ease-out;
 }
-#pou-top-links-2 {
+#pou-top-links-2, #pou-header-2 {
     animation: slideInRight 3s ease-out;
 }
 #pou-top-links li a {
@@ -200,27 +256,116 @@ main h2 {
     color: #2f2f2f;
 }
 #pou-main-content {
-
+    margin-bottom: 50px;
+}
+#pou-main-content h2, #pou-main-content h3 {
+    margin-top: 50px;
 }
 .pou-header {
     margin-top: 15px;
     margin-bottom: 15px;
 }
-.pou-red-header {
+.pou-header-red {
     color: #c33341;
 }
 #pou-top-links-1 {
-    width: 275px;
+    /*width: 275px;*/
+    max-width: 300px;
 }
 #pou-top-links-2 {
-    width: 425px;
+    max-width: 460px;
     margin-left: 160px;
 }
 #pou-top-links-3 {
-    width: 465px;
+    max-width: 510px;
+}
+#pou-content-1 {
+    margin-top: 25px;
+}
+#pou-content-2, #pou-content-3 {
+    margin-top: 50px;
 }
 
+#pou-header-1, #pou-header-2, #pou-header-3 {
+    background-color: #fefefe;
+    text-align: left;
+    height: 60px;
+    text-transform: uppercase;
+    font-weight: bold;
+    vertical-align: center;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    color: #2f2f2f;
+}
+.pou-header-text {
+    display: block;
+    margin-top: 5px;
+}
+#pou-header-1 {
+    max-width: 320px;
+}
+#pou-header-2 {
+    max-width: 540px;
+}
+#pou-header-3 {
+    max-width: 610px;
+}
+#pou-main-content p {
+    margin-left: 35px;
+}
 
+@media only screen and (max-width: 1200px) {
+    body main {
+        margin-left: 5px;
+    }
+    body main h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .pou-header {
+        margin-top: 0;
+        margin-bottom: 5;
+    }
+    #pou-main-content p {
+        margin-left: 5px;
+    }
+    #pou-main-content h2 {
+        font-size: 16px;
+    }
+    #pou-top-links li {
+        background-color: #fefefe;
+        text-align: left;
+        height: 40px;
+        text-transform: uppercase;
+        font-weight: bold;
+        vertical-align: center;
+        margin-bottom: 10px;
+        padding-top: 0;
+        font-size: 11px;
+    }
+    .pou-links-number, .pou-header-number {
+        color: #ca3141;
+        margin-right: 10px;
+        display: block;
+        font-size: 20px;
+        font-weight: bold;
+        float: left;
+        margin-left: 10px;
+    }
+    .pou-links-number {
+        margin-top: 3px;
+    }
+    #pou-top-links-1 {
+        max-width: 180px;
+    }
+    #pou-top-links-2 {
+        max-width: 280px;
+        margin-left: 30px;
+    }
+    #pou-top-links-3 {
+        max-width: 320px;
+    }
+}
 
 @keyframes fadeIn {
     to {
