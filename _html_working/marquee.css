@@ -28,13 +28,14 @@
     transform: translateX(100%);
     -moz-animation: scroll-left 2s linear infinite;
     -webkit-animation: scroll-left 2s linear infinite;
-    animation: scroll-left 30s linear infinite;
+    animation: scroll-left 40s linear infinite;
     font-weight: bold;
 }
 #marquee a, #marquee-testing a {
     color: #0a0208;
     text-decoration: none;
     display: block;
+    /*margin-left: -40%;*/
 }
 #marquee-text-left {
     text-align: left;

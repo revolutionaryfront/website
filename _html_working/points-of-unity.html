@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" type="text/css" href="bootstrap.parts.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="marquee.css">
     <link rel="stylesheet" type="text/css" href="mobile-hamburger-menu.css">
+    <link rel="stylesheet" type="text/css" href="aos.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
     <title>Points of Unity | Revolutionary Front DFW</title>
     <link rel="preload" href="/rfwebsite/_html_working/test-alert-data.json" as="fetch" type="application/json">
     <script src="marquee-load.js"></script>
+    <script src="aos.js"></script>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <!-- Remove this section when going live. -->
@@ -62,8 +65,11 @@
             <div class="overlay"></div>
             <div id="ig-logo"><a href="http://instagram.com/RevolutionaryFrontDFW" target="_blank" rel="nofollow noopener noreferrer"><img src="instagram-logo-256.webp" alt="Revolutionary Front DFW on Instagram" class="ig-logo-img"></a></div>
         </div>
-        <!-- --><div id="marquee"><p id="marquee-text-left"></p><p id="marquee-text-center"></p><p id="marquee-text-right"></p></div><!-- -->
-        <!--<div id="marquee-testing"><p id="marquee-text-left"><a href="#tm-1">Test message #1. Test 123 this is a test 123.</a></p><p id="marquee-text-center"><a href="#tm-2">Test message #2. Test 123 this is a test 123.</a></p><p id="marquee-text-right"><a href="#tm-3">Test message #3. Test 123 this is a test 123.</a></p></div>-->
+
+        <div id="marquee"><p id="marquee-text-left"></p><p id="marquee-text-center"></p><p id="marquee-text-right"></p></div>
+        <!--
+        <div id="marquee-testing"><p id="marquee-text-left"><a href="#tm-1">Test message #1. Test 123 this is a test 123.</a></p><p id="marquee-text-center"><a href="#tm-2">Test message #2. Test 123 this is a test 123.</a></p><p id="marquee-text-right"><a href="#tm-3">Test message #3. Test 123 this is a test 123.</a></p></div>
+        -->
     </header>
     <main>
     <div id="pou-main-content">
@@ -73,14 +79,14 @@
             <ul>
                 <li id="pou-top-links-1"><a href="#pou-content-1"><span class="pou-links-number">1.</span><span class="pou-links-text">Abolishing capitalism<br>and imperialism</span></a></li>
                 <li id="pou-top-links-2"><a href="#pou-content-2"><span class="pou-links-number">2.</span><span class="pou-links-text">Advancing the revolutionary struggle<br>towards socialism</span></a></li>
-                <li id="pou-top-links-3"><a href="#pou-content-3"><span class="pou-links-number">3.</span><span class="pou-links-text">Supporting all struggles against capitalism<br>and imperialism across the globe</span></a></li>
+                <li id="pou-top-links-3"><a href="#pou-content-3"><span class="pou-links-number">3.</span><span class="pou-links-text">Supporting all struggles against<br>capitalism and imperialism</span></a></li>
             </ul>
+            <hr>
         </div>
 
-        <hr>
-
     <a id="pou-content-1"></a>
-    <h3 id="pou-header-1"><span class="pou-header-number">1.</span><span class="pou-header-text">Abolishing capitalism<br>and imperialism</span></h3>
+    <!--<h3 id="pou-header-1"><span class="pou-header-number">1.</span><span class="pou-header-text">Abolishing capitalism<br>and imperialism</span></h3>-->
+    <div id="pou-header-1" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos="fade-right" data-aos-once="false"><span class="pou-header-number">1.</span><span class="pou-header-text">Abolishing capitalism<br>and imperialism</span></div>
     <p>
     <strong>RF understands capitalism as:</strong><br>
     An economic system characterized by 1) generalized commodity production and exchange, 2) private ownership of the means of production, and 3) the exploitation of labor-power by property owners to generate profit.
@@ -113,7 +119,8 @@
     </p>
 
     <a id="pou-content-2"></a>
-    <h3 id="pou-header-2"><span class="pou-header-number">2.</span><span class="pou-header-text">Advancing the revolutionary struggle<br>towards socialism</span></h3>
+    <!--<h3 id="pou-header-2"><span class="pou-header-number">2.</span><span class="pou-header-text">Advancing the revolutionary struggle<br>towards socialism</span></h3>-->
+    <div id="pou-header-2" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos="fade-right" data-aos-once="false"><span class="pou-header-number">2.</span><span class="pou-header-text">Advancing the revolutionary struggle<br>towards socialism</span></div>
     <p>
     <strong>RF understands socialism as:</strong>
     <br>
@@ -171,8 +178,8 @@
     </p>
 
     <a id="pou-content-3"></a>
-    <h3 id="pou-header-3"><span class="pou-header-number">3.</span><span class="pou-header-text">Supporting all struggles against capitalism<br>and imperialism across the globe</span></h3>
-    </p>
+    <!--<h3 id="pou-header-3"><span class="pou-header-number">3.</span><span class="pou-header-text">Supporting all struggles against capitalism<br>and imperialism across the globe</span></h3>-->
+    <div id="pou-header-3" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos="fade-right" data-aos-once="false"><span class="pou-header-number">3.</span><span class="pou-header-text">Supporting all struggles against<br>capitalism and imperialism</span></div>
     <p>
     <strong>RF offers its unwavering solidarity to all of the socialist states across the world, past and present.</strong>
     </p>
@@ -224,4 +231,5 @@
         </div>
     </footer>
   </body>
+  <script src="aos_init.js"></script>
 </html>
