@@ -37,4 +37,8 @@ window.onload = function() {
         //document.querySelector('#marquee').style.visibility = 'hidden';
         document.getElementById('marquee').style.display = 'none';
     });
+
+
+
+
 }

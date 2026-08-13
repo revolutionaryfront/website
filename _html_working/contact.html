@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Contact Us - Revolutionary Front DFW</title>
+    <script src="templates/html_head.js"></script>
+    <script type="text/javascript">var html = window.template(); document.head.innerHTML += html;</script>
+    <script src="static/js/openpgp.min.js"></script>
+    <script src="static/js/cryptmsg.js"></script>
+  </head>
+  <body>
+    <script src="templates/body_header.js"></script>
+    <script type="text/javascript">var html = window.template(); document.body.innerHTML += html;</script>
+    <main id="contact-us">
+        <h1>Contact Us</h1>
+        <span id="redirmsgtxt">&nbsp;</span>
+        <form action="https://rf.mt.oits.fail/pubweb_form_sub" method="POST" id="contactForm">
+            <label for="name" class="contact-label">Name</label>
+            <input type="text" id="name" name="name" class="contact-input" placeholder="Name" required>
+            <br>
+            <label for="email" class="contact-label">Email</label>
+            <input type="email" id="email" name="email" class="contact-input" placeholder="Email" required>
+            <br>
+            <label for="message" class="contact-label">Message</label>
+            <textarea id="message" name="message" class="contact-input" placeholder="Message" required></textarea>
+            <br>
+            <input type="hidden" id="k" name="k" value="MTAzMjkK3AAFE85v">
+            <input type="hidden" id="formredir" name="formredir" value=" ">
+            <button type="submit">Send Message</button>
+        </form>
+    </main>
+    <script src="templates/body_footer.js"></script>
+    <script type="text/javascript">var html = window.template(); document.body.innerHTML += html;</script>
+  </body>
+</html>
