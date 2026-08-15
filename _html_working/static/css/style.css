@@ -120,7 +120,7 @@ body header, body footer {
         float:right;
         position: absolute;
         top: 155px;
-        right: 760px;
+        right: 575px;
         z-index: 3;
     }
     .ig-logo-img {
@@ -179,10 +179,10 @@ body header, body footer {
     color: white;
     float: left;
     display:block;
-    height:80%;
+    height:65%;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top:40px;
+    padding-top:110px;
     width: 140px;
     text-align: center;
     z-index: 200;
@@ -209,7 +209,7 @@ body header, body footer {
     background-color: #d94f4d;
 }
 .top-nav-list-section {
-    height: 100px;
+    height: 200px;
     z-index: 200;
 }
 .top-nav-red-item {
@@ -639,7 +639,7 @@ body header, body footer {
 #contact-us {
     margin-top: 50px;
     margin-left: 50px;
-    margin-bottom: 6%;
+    margin-bottom: 10%;
 }
 #contact-us h1 {
     margin-bottom: 0;
