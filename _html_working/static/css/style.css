@@ -610,6 +610,10 @@ body header, body footer {
     background-color: #ddd;
     color: black;
 }
+#home-sub-nav li:active, #home-sub-nav a:active {
+    color: #d84f4d;
+    background-color: black;
+}
 @font-face {
     font-family: 'BebasNeueSrv';
     src: url('../fonts/BebasNeue-Regular.woff2') format("woff2"),

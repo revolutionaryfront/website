@@ -1,0 +1,58 @@
+[Unit]
+Description=Runs the UWSGI daemon for secform.revolutionaryfront.org.
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/var/www/uwsgi/secform.revolutionaryfront.org
+PrivateTmp=true
+Environment=SF_RF_WORKING_DIR=/var/www/uwsgi/secform.revolutionaryfront.org
+Environment="PATH=/var/www/uwsgi/secform.revolutionaryfront.org/venv/bin:/usr/local/bin:/usr/bin"
+ExecStart=/var/www/uwsgi/secform.revolutionaryfront.org/run_sf_rf.sh
+Restart=on-failure
+RestartSec=30s
+#User=www-data
+#Group=mt
+User=secformrf
+Group=www-data
+
+
+
+ReadWritePaths=/tmp /var/log/uwsgi/secform.revolutionaryfront.org.log /var/www/uwsgi/secform.revolutionaryfront.org
+InaccessiblePaths=-/dev/shm -/boot -/home -/initrd.img -/initrd.img.old -/media -/mnt -/root -/vmlinuz /vmlinuz.old
+#apparmor_plugin.so should not be listed in NoExecPaths.
+NoExecPaths=-/var/www/uwsgi/secform.revolutionaryfront.org/index.py -/var/www/uwsgi/secform.revolutionaryfront.org/requirements.txt /var/www/uwsgi/secform.revolutionaryfront.org/static -/var/www/uwsgi/secform.revolutionaryfront.org/templates -/var/www/uwsgi/secform.revolutionaryfront.org/uwsgi-sf_rf.ini  -/tmp -/var/log/uwsgi/secform.revolutionaryfront.org.log
+ReadOnlyPaths=/ -/var/www/uwsgi/secform.revolutionaryfront.org/apparmor_plugin.so -/var/www/uwsgi/secform.revolutionaryfront.org/secformuwsgi.py /var/www/uwsgi/secform.revolutionaryfront.org/index.py -/var/www/uwsgi/secform.revolutionaryfront.org/requirements.txt -/var/www/uwsgi/secform.revolutionaryfront.org/run_sf_rf.sh /var/www/uwsgi/secform.revolutionaryfront.org/static /var/www/uwsgi/secform.revolutionaryfront.org/templates -/var/www/uwsgi/secform.revolutionaryfront.org/uwsgi-sf_rf.ini -/var/www/uwsgi/secform.revolutionaryfront.org/venv
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_CHOWN CAP_DAC_OVERRIDE CAP_SETGID CAP_SETPCAP CAP_SETUID
+SystemCallArchitectures=native
+SecureBits=no-setuid-fixup-locked noroot-locked
+MemoryDenyWriteExecute=yes
+NoNewPrivileges=yes
+LockPersonality=yes
+PrivateDevices=yes
+ProtectClock=yes
+ProtectControlGroups=yes
+ProtectHome=yes
+ProtectHostname=yes
+ProtectKernelLogs=yes
+ProtectKernelModules=yes
+ProtectKernelTunables=yes
+ProtectProc=invisible
+ProtectSystem=strict
+ProcSubset=pid
+
+
+RestrictNamespaces=yes
+UMask=0077
+PrivateIPC=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX AF_PACKET AF_NETLINK
+SystemCallFilter=@system-service
+SystemCallFilter=~memfd_create
+SystemCallFilter=~@clock @mount @reboot
+
+
+
+
+[Install]
+WantedBy=multi-user.target

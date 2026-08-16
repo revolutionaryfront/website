@@ -1,9 +1,11 @@
 .git/
+*/.local/
 .local/
 .local/*
 .cache/
 .flaskenv
 venv/
+*/venv/
 _notes.txt
 _backup/
 .*~
@@ -20,3 +22,7 @@ secform/
 pubweb_form_sub.py
 _html_working.bak/
 _html_working.bak2/
+mailjet_api_key
+*/mailjet_api_key
+.mailjet_api_key
+*/.mailject_api_key

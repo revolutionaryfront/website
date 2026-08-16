@@ -1,0 +1,13 @@
+click
+Flask
+flask-talisman
+itsdangerous
+Jinja2
+MarkupSafe
+msgspec
+uv
+uWSGI
+Werkzeug
+mailjet_rest
+smtp2go
+minify_html
