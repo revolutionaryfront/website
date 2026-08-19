@@ -10,14 +10,12 @@ from flask import Flask, render_template, request, redirect, url_for, \
     jsonify, send_from_directory
 from smtptgemailer import send_email
 
+app = Flask(__name__)
 
 if 'SF_RF_WORKING_DIR' in environ.keys():
     WORKING_DIR = environ.get('SF_RF_WORKING_DIR')
 else:
-    WORKING_DIR = '/var/www/uwsgi/secform.revolutionaryfront.org'
-
-
-app = Flask(__name__)
+    WORKING_DIR = app.root_path
 
 
 # Make this less stupid later.
@@ -90,15 +88,24 @@ def index_get():
 
 
 @app.route('/favicon.ico')
-def favicon():
+def favicon_ico():
     return send_from_directory(
         path.join(app.root_path, 'static'), 'favicon.ico',
         mimetype='image/vnd.microsoft.icon'
     )
 
 
+@app.route('/robots.txt')
+def robots_txt():
+    return send_from_directory(
+        path.join(app.root_path, 'static'), 'robots.txt',
+        mimetype='text/plain'
+    )
+
+
 @app.errorhandler(Exception)
 def handle_error(e):
+    print(str(e))
     write_log('Error. Path: %s, IP: %s, E: %s, Request: %s, '
               'Request.form: %s, Headers: %s.' %
               (request.full_path, request.remote_addr, str(e), request,
