@@ -49,24 +49,13 @@ document.addEventListener('DOMContentLoaded', function() {
         form.querySelector('#k').value = key;
 
 
-
-        const publicKeyArmored = `-----BEGIN PGP PUBLIC KEY BLOCK-----
-
-xjMEaZ/2ZhYJKwYBBAHaRw8BAQdAp95J+Od7ejHB05IKk6u4QaJxTEQ4Aqgw
-gwxFI0wPbsnNJXNlY2Zvcm1AcmZkZncub3JnIDxzZWNmb3JtQHJmZGZ3Lm9y
-Zz7CwBEEExYKAIMFgmmf9mYDCwkHCRCo3IZK8ACd80UUAAAAAAAcACBzYWx0
-QG5vdGF0aW9ucy5vcGVucGdwanMub3JnU8QTRHDUldxRpBtoonECi1AW9nMT
-KECnVM5Xb2FoDM4DFQoIBBYAAgECGQECmwMCHgEWIQSKKEyzleZBFAlys3mo
-3IZK8ACd8wAAQxYBALp4LfI7y1pqyInJiQvowArb5PiLmpPgkHBmeCO+xtXO
-AP9xV02RA6DucBfi62d0xppFDCkgIiAvlhLajrAEXnPHDM44BGmf9mYSCisG
-AQQBl1UBBQEBB0ByQ4V7gojunmuoGo/0viiVII/hlirCo/oJbbkgaluBaAMB
-CAfCvgQYFgoAcAWCaZ/2ZgkQqNyGSvAAnfNFFAAAAAAAHAAgc2FsdEBub3Rh
-dGlvbnMub3BlbnBncGpzLm9yZxKq4k2+bBy/gZy8ji9ga+jL6F5NZuz1iMzM
-ljnw/UNDApsMFiEEiihMs5XmQRQJcrN5qNyGSvAAnfMAAC81AQDhP+STSZdY
-THXMW5Azl4XkyQVZfG9jDO5SiXdvd37s7AD+Lo5ndahHdfkb2B9kjZq7dd64
-6noRHC3lLuFSYSkuagA=
-=Xu58
------END PGP PUBLIC KEY BLOCK-----`;
+        const pgpKeyResponse = await fetch(
+            'https://secform.revolutionaryfront.org/pgp_pub_key'
+        );
+        const pgpKeyJson = await pgpKeyResponse.json();
+        const b64PubKey = pgpKeyJson.key;
+        const bytes = Uint8Array.from(atob(b64PubKey), c => c.charCodeAt(0));
+        const publicKeyArmored = new TextDecoder().decode(bytes);
 
         const publicKey = await openpgp.readKey({
             armoredKey: publicKeyArmored
@@ -77,13 +66,18 @@ THXMW5Azl4XkyQVZfG9jDO5SiXdvd37s7AD+Lo5ndahHdfkb2B9kjZq7dd64
             message: await openpgp.createMessage({ text: form_data }),
                                                  encryptionKeys: publicKey,
         });
+
+        formElements.forEach(element => {
+            if (!ignoreNames.includes(element.name) && element.name) {
+                element.value = encrypted;
+            }
+        });
         form.querySelector('#message').value = encrypted;
         form.querySelector('#formredir').value = 'https://oits.fail/' +
                                                  'rfwebsite/_html_working/' +
                                                  'contact.html?redir_msg=' +
                                                  'Submission%20Received';
         if (encrypted && key) {
-            //console.log(encrypted);
             form.submit();
         }
     });

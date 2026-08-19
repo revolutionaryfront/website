@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-from os import path
+from os import path, environ
 import datetime
 import time
 from base64 import b64decode, b64encode
@@ -10,6 +10,11 @@ from flask import Flask, render_template, request, redirect, url_for, \
     jsonify, session
 from smtptgemailer import send_email
 
+
+if 'SF_RF_WORKING_DIR' in environ.keys():
+    WORKING_DIR = environ.get('SF_RF_WORKING_DIR')
+else:
+    WORKING_DIR = '/var/www/uwsgi/secform.revolutionaryfront.org'
 
 
 app = Flask(__name__)
@@ -25,8 +30,14 @@ def pubweb_form_key():
     return ''
 """
 
+@app.route('/pgp_pub_key', methods=['GET',])
+def pgp_pub_key():
+    with open(path.join(WORKING_DIR, '.local', 'form_pgp_pub_key'), 'r') as fh:
+        data = {'key': fh.read().strip('\n')}
+    return jsonify(data)
 
-@app.route('/', methods=['POST', ])
+
+@app.route('/', methods=['POST',])
 def index():
     exp_key = b64decode('VFZSSk0wMVVVVXROVkZsNlRXcFpTd289').decode()
     recip_mail = 'secform@rfdfw.org'
@@ -55,8 +66,7 @@ def index():
     }
     email_sender = 'Revolutionary Front DFW <contact@rfdfwmail.org>'
 
-    with open('/var/www/uwsgi/secform.revolutionaryfront.org/.local/'
-              'mailjet_api_key', 'r') as fh:
+    with open(path.join(WORKING_DIR, '.local', 'mailjet_api_key'), 'r') as fh:
         r = fh.read().split('\n')
         api_key = b64decode(r[0].strip()).decode()
         api_secret = b64decode(r[1].strip()).decode()
@@ -94,7 +104,7 @@ def handle_error(e):
     return redirect('https://revolutionaryfront.org/')
 
 def write_log(message, print_msg=True):
-    log_file='/var/www/uwsgi/secform.revolutionaryfront.org/secform.log'
+    log_file = path.join(WORKING_DIR, 'secform.log')
     now = datetime.datetime.now()
     utf8_msg = message.encode('utf-8')
     dt_message = "%s, %s\n" % (now.strftime("%Y-%m-%d %H:%M:%S"),

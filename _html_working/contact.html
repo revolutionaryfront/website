@@ -7,6 +7,7 @@
     <script type="text/javascript">var html = window.template(); document.head.innerHTML += html;</script>
     <script src="static/js/openpgp.min.js"></script>
     <script src="static/js/cryptmsg.js"></script>
+    <link rel="preload" href="https://secform.revolutionaryfront.org/pgp_pub_key" as="fetch" type="application/json" crossorigin>
   </head>
   <body>
     <script src="templates/body_header.js"></script>
@@ -14,7 +15,6 @@
     <main id="contact-us">
         <h1>Contact Us</h1>
         <span id="redirmsgtxt">&nbsp;</span>
-        <!--<form action="https://rf.mt.oits.fail/pubweb_form_sub" method="POST" id="contactForm">-->
         <form action="https://secform.revolutionaryfront.org/" method="POST" id="contactForm">
             <label for="name" class="contact-label">Name</label>
             <input type="text" id="name" name="name" class="contact-input" placeholder="Name" required>
