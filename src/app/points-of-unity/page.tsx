@@ -1,3 +1,9 @@
+import { Page } from "@/components/Page"
+
 export default function PointsOfUnity() {
-  return <p>This is the Points of Unity page!</p>
+  return (
+    <Page>
+      <p>This is the Points of Unity page!</p>
+    </Page>
+  );
 }

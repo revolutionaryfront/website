@@ -1,23 +1,23 @@
-import { cls } from "@/lib/string";
 import Link from "next/link";
-import React from "react";
+
+import { cls } from "@/lib/string";
 
 export interface HeaderButtonProps {
-  callToAction?: boolean;
   openInNewTab?: boolean;
   path: string;
+  primary?: boolean;
   privacy?: boolean;
   text: string;
 }
 
 export const HeaderButton: React.FunctionComponent<HeaderButtonProps> = (
-  { callToAction, openInNewTab, path, privacy, text }
+  { openInNewTab, path, primary, privacy, text }
 ) => {
   return (
     <Link
       className={cls(
-        "flex font-bold hover:bg-slate-300 hover:text-black items-center justify-center uppercase w-50",
-        callToAction ? "bg-revolutionary-red" : ""
+        "flex font-bold hover:bg-highlight hover:text-black items-center justify-center text-body-light uppercase w-50",
+        primary ? "bg-revolutionary-red" : ""
       )}
       href={path}
       target={openInNewTab ? "_blank" : undefined}

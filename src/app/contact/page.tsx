@@ -1,3 +1,9 @@
+import { Page } from "@/components/Page";
+
 export default function Contact() {
-  return <p>This is the Contact page!</p>
+  return (
+    <Page>
+      <p>This is the Contact page!</p>
+    </Page>
+  );
 }

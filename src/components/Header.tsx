@@ -1,13 +1,14 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+
 import { HeaderButton } from "@/components/HeaderButton";
+
 import Logo from "@public/images/rf-logo-bg-black.png";
 
 export const Header: React.FunctionComponent = () => {
   return (
     <header
-      className={"h-30 flex w-full items-center bg-black text-neutral-100"}
+      className="h-30 flex w-full items-center bg-black text-body-light"
     >
       <Link href="/" className="flex items-center p-5">
         <Image
@@ -21,10 +22,11 @@ export const Header: React.FunctionComponent = () => {
         <h1 className="font-title text-5xl">Revolutionary Front</h1>
       </Link>
       <nav className="flex flex-1 h-full justify-end">
+        <HeaderButton text="About" path="/about"/>
         <HeaderButton text="Points of Unity" path="/points-of-unity"/>
         <HeaderButton text="Contact" path="/contact"/>
         <HeaderButton text="Donate" path="https://donate.revolutionaryfront.org" privacy openInNewTab />
-        <HeaderButton text="Join" path="/join" callToAction />
+        <HeaderButton text="Join" path="/join" primary />
       </nav>
     </header>
   );
