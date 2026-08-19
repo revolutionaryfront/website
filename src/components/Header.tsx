@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { HeaderButton } from "@/components/HeaderButton";
+import Logo from "@public/images/rf-logo-bg-black.png";
 
 export const Header: React.FunctionComponent = () => {
   return (
@@ -10,7 +11,7 @@ export const Header: React.FunctionComponent = () => {
     >
       <Link href="/" className="flex items-center p-5">
         <Image
-          src="/images/rf-logo-bg-black.png"
+          src={Logo.src}
           alt="Revolutionary Front circular logo"
           loading="eager"
           className="mr-5"

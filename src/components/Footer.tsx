@@ -1,5 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import CCLogo from "@public/images/license/cc.svg";
+import CCAttributionIcon from "@public/images/license/cc_by.svg";
+import CCNonCommercialIcon from "@public/images/license/cc_nc.svg";
+import CCShareAlikeIcon from "@public/images/license/cc_sa.svg";
 
 export const Footer: React.FunctionComponent = () => {
   return (
@@ -20,25 +24,25 @@ export const Footer: React.FunctionComponent = () => {
             <Image
               className="inline"
               alt="Creative Commons Logo"
-              src="/images/license/cc.svg"
+              src={CCLogo.src}
               height={16}
               width={16}/>
             <Image
               className="inline"
-              alt="Creative Commons Attribution Logo"
-              src="/images/license/cc_by.svg"
+              alt="Creative Commons Attribution Icon"
+              src={CCAttributionIcon.src}
               height={16}
               width={16}/>
             <Image
               className="inline"
-              alt="Creative Commons Non-Commercial Logo"
-              src="/images/license/cc_nc.svg"
+              alt="Creative Commons Non-Commercial Icon"
+              src={CCNonCommercialIcon.src}
               height={16}
               width={16}/>
             <Image
               className="inline"
-              alt="Creative Commons Share-Alike Logo"
-              src="/images/license/cc_sa.svg"
+              alt="Creative Commons Share-Alike Icon"
+              src={CCShareAlikeIcon.src}
               height={16}
               width={16}/>
         </Link>

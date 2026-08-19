@@ -1,4 +1,4 @@
-import { cls } from "@/utils/string";
+import { cls } from "@/lib/string";
 import Link from "next/link";
 import React from "react";
 
