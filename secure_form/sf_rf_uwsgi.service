@@ -1,5 +1,5 @@
 [Unit]
-Description=Runs the UWSGI daemon for secform.revolutionaryfront.org.
+Description=Runs the UWSGI daemon for secform.revolutionaryfront.org
 Wants=network-online.target
 After=network-online.target
 
@@ -12,19 +12,17 @@ Environment="PATH=/var/www/uwsgi/secform.revolutionaryfront.org/venv/bin:/usr/lo
 ExecStart=/var/www/uwsgi/secform.revolutionaryfront.org/run_sf_rf.sh
 Restart=on-failure
 RestartSec=30s
-#User=www-data
-#Group=mt
 User=secformrf
 Group=www-data
 
 
 
 ReadWritePaths=/tmp /var/log/uwsgi/secform.revolutionaryfront.org.log /var/www/uwsgi/secform.revolutionaryfront.org
-InaccessiblePaths=-/dev/shm -/boot -/home -/initrd.img -/initrd.img.old -/media -/mnt -/root -/vmlinuz /vmlinuz.old
+InaccessiblePaths=-/dev/shm -/boot -/home -/initrd.img -/initrd.img.old -/media -/mnt -/root -/vmlinuz /vmlinuz.old -/srv -/var/www/uwsgi.bak -/var/www/uwsgi/atwhatcost -/var/www/uwsgi/mass-texter -/var/www/uwsgi/mass-texter-daic -/var/www/uwsgi/mass-texter-rf -/var/www/uwsgi/mass-texter-testing
 #apparmor_plugin.so should not be listed in NoExecPaths.
-NoExecPaths=-/var/www/uwsgi/secform.revolutionaryfront.org/index.py -/var/www/uwsgi/secform.revolutionaryfront.org/requirements.txt /var/www/uwsgi/secform.revolutionaryfront.org/static -/var/www/uwsgi/secform.revolutionaryfront.org/templates -/var/www/uwsgi/secform.revolutionaryfront.org/uwsgi-sf_rf.ini  -/tmp -/var/log/uwsgi/secform.revolutionaryfront.org.log
-ReadOnlyPaths=/ -/var/www/uwsgi/secform.revolutionaryfront.org/apparmor_plugin.so -/var/www/uwsgi/secform.revolutionaryfront.org/secformuwsgi.py /var/www/uwsgi/secform.revolutionaryfront.org/index.py -/var/www/uwsgi/secform.revolutionaryfront.org/requirements.txt -/var/www/uwsgi/secform.revolutionaryfront.org/run_sf_rf.sh /var/www/uwsgi/secform.revolutionaryfront.org/static /var/www/uwsgi/secform.revolutionaryfront.org/templates -/var/www/uwsgi/secform.revolutionaryfront.org/uwsgi-sf_rf.ini -/var/www/uwsgi/secform.revolutionaryfront.org/venv
-CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_CHOWN CAP_DAC_OVERRIDE CAP_SETGID CAP_SETPCAP CAP_SETUID
+NoExecPaths=-/var/www/uwsgi/secform.revolutionaryfront.org/index.py -/var/www/uwsgi/secform.revolutionaryfront.org/requirements.txt -/var/www/uwsgi/secform.revolutionaryfront.org/static -/var/www/uwsgi/secform.revolutionaryfront.org/templates -/var/www/uwsgi/secform.revolutionaryfront.org/uwsgi-sf_rf.ini  -/tmp -/var/log/uwsgi/secform.revolutionaryfront.org.log -/var/www/uwsgi/secform.revolutionaryfront.org/secformuwsgi.py -/var/www/uwsgi/secform.revolutionaryfront.org/smtptgemailer.py
+ReadOnlyPaths=/ -/var/www/uwsgi/secform.revolutionaryfront.org/apparmor_plugin.so -/var/www/uwsgi/secform.revolutionaryfront.org/secformuwsgi.py -/var/www/uwsgi/secform.revolutionaryfront.org/index.py -/var/www/uwsgi/secform.revolutionaryfront.org/requirements.txt -/var/www/uwsgi/secform.revolutionaryfront.org/run_sf_rf.sh -/var/www/uwsgi/secform.revolutionaryfront.org/static -/var/www/uwsgi/secform.revolutionaryfront.org/templates -/var/www/uwsgi/secform.revolutionaryfront.org/uwsgi-sf_rf.ini -/var/www/uwsgi/secform.revolutionaryfront.org/venv -/var/www/uwsgi/secform.revolutionaryfront.org/smtptgemailer.py
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_DAC_OVERRIDE CAP_SETPCAP
 SystemCallArchitectures=native
 SecureBits=no-setuid-fixup-locked noroot-locked
 MemoryDenyWriteExecute=yes
