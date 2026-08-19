@@ -7,7 +7,7 @@ import time
 from base64 import b64decode, b64encode
 import html
 from flask import Flask, render_template, request, redirect, url_for, \
-    jsonify, session
+    jsonify, send_from_directory
 from smtptgemailer import send_email
 
 
@@ -55,7 +55,7 @@ def index():
     form_key = request.form.get('k')
     if not form_key:
         return redirect(redir_url)
-    if form_key.strip(' \r\n') != exp_key:
+    elif form_key.strip(' \r\n') != exp_key:
         return redirect(redir_url)
 
     email_subject = 'Website contact form submission received'
@@ -83,6 +83,7 @@ def index():
         time.sleep(1)
     return redirect(redir_url)
 
+
 @app.route('/', methods=['GET', ])
 def index_get():
     return redirect('https://revolutionaryfront.org')
@@ -95,6 +96,7 @@ def favicon():
         mimetype='image/vnd.microsoft.icon'
     )
 
+
 @app.errorhandler(Exception)
 def handle_error(e):
     write_log('Error. Path: %s, IP: %s, E: %s, Request: %s, '
@@ -102,6 +104,7 @@ def handle_error(e):
               (request.full_path, request.remote_addr, str(e), request,
                request.form, str(request.headers)))
     return redirect('https://revolutionaryfront.org/')
+
 
 def write_log(message, print_msg=True):
     log_file = path.join(WORKING_DIR, 'secform.log')
