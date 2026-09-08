@@ -1,7 +1,7 @@
 import { cls } from "@/lib/string";
 
 export interface PageProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
 }
 

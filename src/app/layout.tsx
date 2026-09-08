@@ -26,7 +26,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${bebasNeue.variable} ${poppins.variable} min-h-full antialiased`}
     >
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <body className="bg-background flex font-body h-dvh flex-col items-center">
         <Header />
         {children}

@@ -17,7 +17,6 @@ export const Footer: React.FunctionComponent = () => {
         <nav className="flex">
           <FooterLink href="/" text="Home" />
           <FooterLink href="/contact" text="Contact" />
-          <FooterLink href="https://donate.revolutionaryfront.org" text="Donate" openInNewTab privacy />
           <FooterLink href="/join" text="Join" />
         </nav>
         <p className="mt-5">

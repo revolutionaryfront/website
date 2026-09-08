@@ -25,7 +25,6 @@ export const Header: React.FunctionComponent = () => {
         <HeaderButton text="About" path="/about"/>
         <HeaderButton text="Points of Unity" path="/points-of-unity"/>
         <HeaderButton text="Contact" path="/contact"/>
-        <HeaderButton text="Donate" path="https://donate.revolutionaryfront.org" privacy openInNewTab />
         <HeaderButton text="Join" path="/join" primary />
       </nav>
     </header>

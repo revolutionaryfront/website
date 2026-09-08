@@ -24,9 +24,8 @@ export default function Home() {
           direct action, and grassroots organizing. By doing so, we will assist our fellow workers and oppressed community
           members in developing the knowledge, desire, and institutions necessary to bring forth liberation.
         </article>
-        <nav className="flex flex-row justify-between">
+        <nav className="flex flex-row justify-around">
           <CallToActionButton path="/points-of-unity" text="Points of Unity" />
-          <CallToActionButton path="https://donate.revolutionaryfront.org" text="Donate" openInNewTab privacy />
           <CallToActionButton path="/join" text="Join" />
         </nav>
       </Page>
