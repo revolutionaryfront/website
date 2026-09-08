@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { FooterLink } from "@/components/FooterLink";
-import { SocialMediaButton } from "@/components/SocialMediaButton";
+import { SocialMediaLink } from "@/components/SocialMediaLink";
 
 import CCLogo from "@public/images/license/cc.svg";
 import CCAttributionIcon from "@public/images/license/cc_by.svg";
@@ -15,9 +15,9 @@ export const Footer: React.FunctionComponent = () => {
     <footer className="bg-black flex font-title text-body-light p-5 w-full">
       <div>
         <nav className="flex">
-          <FooterLink href="/" text="Home" />
-          <FooterLink href="/contact" text="Contact" />
-          <FooterLink href="/join" text="Join" />
+          <FooterLink path="/" text="Home" />
+          <FooterLink path="/contact" text="Contact" />
+          <FooterLink path="/join" text="Join" />
         </nav>
         <p className="mt-5">
           This work is licensed under Creative Commons&nbsp;
@@ -54,7 +54,7 @@ export const Footer: React.FunctionComponent = () => {
         </p>
       </div>
       <div className="flex flex-1 justify-end">
-        <SocialMediaButton
+        <SocialMediaLink
           alt="Instagram"
           href="https://instagram.com/RevolutionaryFrontDFW"
           src={InstagramLogoWhite.src} />

@@ -1,4 +1,4 @@
-import { CallToActionButton } from "@/components/CallToActionButton";
+import { CallToActionLink } from "@/components/CallToActionLink";
 import { Page } from "@/components/Page";
 
 import HomeBackgroundImage from "@public/images/home-bg.png";
@@ -12,8 +12,8 @@ export default function Home() {
           backgroundImage: `url('${HomeBackgroundImage.src}')`,
         }}>
         <div className="max-w-5xl p-5 text-body-light text-shadow-lg/20 w-full">
-          <h1 className="font-bold font-title mb-2 text-8xl">We are Revolutionary Front,</h1>
-          <h2 className="font-bold text-5xl uppercase break-keep">
+          <h1 className="font-bold font-title mb-2 text-7xl xl:text-8xl">We are Revolutionary Front,</h1>
+          <h2 className="font-bold text-4xl xl:text-5xl uppercase break-keep">
             a revolutionary socialist and anti-imperialist organization in North Texas.
           </h2>
         </div>
@@ -25,8 +25,8 @@ export default function Home() {
           members in developing the knowledge, desire, and institutions necessary to bring forth liberation.
         </article>
         <nav className="flex flex-row justify-around">
-          <CallToActionButton path="/points-of-unity" text="Points of Unity" />
-          <CallToActionButton path="/join" text="Join" />
+          <CallToActionLink path="/points-of-unity" text="Points of Unity" />
+          <CallToActionLink path="/join" text="Join" />
         </nav>
       </Page>
     </div>

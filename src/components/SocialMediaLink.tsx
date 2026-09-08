@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export interface SocialMediaButtonProps {
+export interface SocialMediaLinkProps {
   /**
    * Accessible label (for screen readers).
    */
@@ -15,13 +15,12 @@ export interface SocialMediaButtonProps {
   src: string;
 }
 
-export const SocialMediaButton: React.FunctionComponent<SocialMediaButtonProps> = (
+export const SocialMediaLink: React.FunctionComponent<SocialMediaLinkProps> = (
   { alt, href, src }
 ) => {
   return (
     <Link
       aria-label={alt}
-      className="text-body-light transition-colors hover:text-highlight"
       href={href}
       target="_blank"
       rel="nofollow noreferrer">

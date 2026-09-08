@@ -1,19 +1,13 @@
-import { omit } from "@/lib/object";
-import Link, { LinkProps } from "next/link";
+import { Link, LinkProps } from "@/components/Link";
+import { cls } from "@/lib/string";
 
-export interface FooterLinkProps extends LinkProps {
-  openInNewTab?: boolean;
-  privacy?: boolean;
-  text: string;
-}
-
-export const FooterLink: React.FunctionComponent<FooterLinkProps> = (props) => {
-  const linkProps = omit(props, ["privacy", "openInNewTab"]);
+export const FooterLink: React.FunctionComponent<LinkProps> = (props) => {
   return (
     <Link
-      className="mr-3"
-      target={props.openInNewTab ? "_blank" : undefined}
-      rel={props.privacy ? "nofollow noreferrer" : undefined}
-      {...linkProps}>{props.text}</Link>
+      className={cls(
+        props.className ?? "",
+        "mr-3"
+      )}
+      {...props} />
   );
 }
