@@ -15,6 +15,11 @@ export const Header: React.FunctionComponent = () => {
 
   const buttons = [
     <HeaderLink
+      key="about"
+      text="About"
+      path="/about"
+      onClick={() => setIsOpen(false)}/>,
+    <HeaderLink
       key="pointsOfUnity"
       text="Points of Unity"
       path="/points-of-unity"
