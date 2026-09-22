@@ -15,3 +15,8 @@
   --font-title: var(--font-title);
   --font-body: var(--font-body);
 }
+
+p {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
