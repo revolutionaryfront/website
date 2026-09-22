@@ -1,4 +1,4 @@
-import { Link, LinkProps } from "@/components/Link";
+import { Link, LinkProps } from "@/components/link";
 import { cls } from "@/lib/string";
 
 export const CallToActionLink: React.FunctionComponent<LinkProps> = (props) => {

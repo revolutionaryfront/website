@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { FooterLink } from "@/components/FooterLink";
-import { SocialMediaLink } from "@/components/SocialMediaLink";
+import { FooterLink } from "@/components/footer-link";
+import { SocialMediaLink } from "@/components/social-media-link";
 
 import CCLogo from "@public/images/license/cc.svg";
 import CCAttributionIcon from "@public/images/license/cc_by.svg";

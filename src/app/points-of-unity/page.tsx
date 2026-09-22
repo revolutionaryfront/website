@@ -1,5 +1,5 @@
-import { Page } from "@/components/Page"
-import { Title } from "@/components/Title"
+import { Page } from "@/components/page"
+import { Title } from "@/components/title"
 import { PointsOfUnitySectionHeader } from "./_components/section-header";
 import { PointsOfUnitySectionSubtitle } from "./_components/section-subtitle";
 import { PointsOfUnitySection } from "./_components/section";

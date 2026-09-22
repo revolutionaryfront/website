@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu as MenuIcon } from "lucide-react";
 
-import { HeaderLink } from "@/components/HeaderLink";
+import { HeaderLink } from "@/components/header-link";
 
 import Logo from "@public/images/rf-logo-bg-black.png";
 import { cls } from "@/lib/string";

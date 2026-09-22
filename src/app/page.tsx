@@ -1,5 +1,5 @@
-import { CallToActionLink } from "@/components/CallToActionLink";
-import { Page } from "@/components/Page";
+import { CallToActionLink } from "@/components/call-to-action-link";
+import { Page } from "@/components/page";
 
 import HomeBackgroundImage from "@public/images/home-bg.png";
 
