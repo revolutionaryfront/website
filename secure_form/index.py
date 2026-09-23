@@ -41,9 +41,13 @@ def index():
     recip_mail = 'secform@rfdfw.org'
     recip_name = 'Revolutionary Front Secure Form'
     redir_url = 'https://revolutionaryfront.org'
-    redir_domains = ('revolutionaryfront.org', 'secform.revolutionaryfront.org',
-                     'rfdfw.org', 'secform.rfdfw.org', 'oits.fail',
-                     'rf.mt.oits.fail')
+    redir_domains = ('revolutionaryfront.org',
+                     'secform.revolutionaryfront.org',
+                     'rfdfw.org',
+                     'secform.rfdfw.org',
+                     'oits.fail',
+                     'rf.mt.oits.fail',
+                    )
 
     r = request.form.get('formredir')
     if r and r.startswith('https://'):
@@ -100,6 +104,23 @@ def robots_txt():
     return send_from_directory(
         path.join(app.root_path, 'static'), 'robots.txt',
         mimetype='text/plain'
+    )
+
+
+
+@app.route('/openpgp.min.js')
+def openpgp_min_js():
+    return send_from_directory(
+        path.join(app.root_path, 'static'), 'openpgp.min.js',
+        mimetype='application/javascript'
+    )
+
+
+@app.route('/cryptmsg.min.js')
+def cryptmsg_min_js():
+    return send_from_directory(
+        path.join(app.root_path, 'static'), 'cryptmsg.min.js',
+        mimetype='application/javascript'
     )
 
 
