@@ -30,7 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body className="bg-background flex font-body h-dvh flex-col items-center">
+      <body className="bg-background flex font-body min-h-dvh flex-col items-center">
         <Header />
         {children}
         <Footer />

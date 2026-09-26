@@ -12,7 +12,7 @@ import InstagramLogoWhite from "@public/images/instagram-logo-white.svg"
 
 export const Footer: React.FunctionComponent = () => {
   return (
-    <footer className="bg-black flex font-title text-body-light p-5 w-full">
+    <footer className="bg-black flex font-title text-body-light mt-auto p-5 w-full">
       <div>
         <nav className="flex">
           <FooterLink path="/" text="Home" />
