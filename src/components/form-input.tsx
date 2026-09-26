@@ -2,6 +2,7 @@ import { cls } from "@/lib/string";
 import { useId } from "react";
 
 export interface FormInputProps {
+  id?: string;
   label: string;
   name: string;
   required?: boolean;
